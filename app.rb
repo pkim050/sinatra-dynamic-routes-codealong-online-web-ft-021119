@@ -1,7 +1,7 @@
 require_relative 'config/environment'
 
 class App < Sinatra::Base
-
+  resp = Rack::Response.new
   # This is a sample static route.
   get '/hello' do
     "Hello World!"
@@ -25,4 +25,5 @@ class App < Sinatra::Base
     @num2 = params[:num2]
     @num1 * @num2
   end
+  resp.finish
 end
